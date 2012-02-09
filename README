@@ -1,0 +1,15 @@
+I am following the instructions from:
+  
+  http://cemerick.com/2010/08/24/hosting-maven-repos-on-github/
+  
+Make sure you have maven 3, not 2!!
+
+JBlas
+=====
+
+git clone git@github.com:tjhunter/mm-maven-dependencies.git
+git clone git://github.com/mikiobraun/jblas.git
+cd jblas/
+mvn -DaltDeploymentRepository=snapshot-repo::default::file:../mm-maven-dependencies/releases/ clean deploy
+cd ../mm-maven-dependencies
+git add releases
